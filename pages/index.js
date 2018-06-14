@@ -19,6 +19,7 @@ class Home extends Component {
             <ul>
               <li><a href="https://twitter.com/rai_siqueira">Twitter</a> - </li>
               <li><a href="https://github.com/raisiqueira">Github</a> - </li>
+              <li><a href="https://linkedin.com/in/raisiqueira">LinkedIn</a> - </li>
               <li>
                 <a href="https://instagram.com/rai_siqueira">Instagram</a>
               </li>
