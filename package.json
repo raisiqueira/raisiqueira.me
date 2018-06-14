@@ -1,0 +1,30 @@
+{
+  "name": "raisiqueira",
+  "version": "0.0.1",
+  "description": "My Personal website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "deploy": "now"
+  },
+  "keywords": [
+    "Raí Siqueira",
+    "Raí",
+    "react",
+    "reactjs",
+    "nextjs",
+    "nodejs",
+    "website"
+  ],
+  "author": "Raí Siqueira",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^6.0.3",
+    "now": "^11.2.4",
+    "nprogress": "^0.2.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  }
+}
