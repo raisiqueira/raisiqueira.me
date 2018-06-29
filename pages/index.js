@@ -1,25 +1,32 @@
 import {Component} from 'react';
+import Typing from 'react-typing-animation';
 import Page from '../layouts/pages';
 import Avatar from '../components/Avatar';
 
+const imgUri = 'https://avatars0.githubusercontent.com/u/2914170?s=460&v=4';
 // Init of the layout
-
 class Home extends Component {
   render () {
     return (
       <Page>
         <div>
-          <Avatar
-            url="https://avatars0.githubusercontent.com/u/2914170?s=460&v=4"
-            alt="Raí Siqueira"
-          />
-          <h1>Raí Siqueira</h1>
-          <h2>front-end engineer and beer lover.</h2>
+          <Avatar url={imgUri} alt="Raí Siqueira" />
+          <Typing>
+            <h1>Raí Siqueira</h1>
+          </Typing>
+          <Typing startDelay={1000}>
+            <h2>front-end engineer and beer lover.</h2>
+          </Typing>
           <footer>
             <ul>
               <li><a href="https://twitter.com/rai_siqueira">Twitter</a> - </li>
               <li><a href="https://github.com/raisiqueira">Github</a> - </li>
-              <li><a href="https://linkedin.com/in/raisiqueira">LinkedIn</a> - </li>
+              <li>
+                <a href="https://linkedin.com/in/raisiqueira">LinkedIn</a>
+                {' '}
+                -
+                {' '}
+              </li>
               <li>
                 <a href="https://instagram.com/rai_siqueira">Instagram</a>
               </li>
