@@ -19,16 +19,34 @@ class Home extends Component {
           </Typing>
           <footer>
             <ul>
-              <li><a href="https://twitter.com/rai_siqueira">Twitter</a> - </li>
-              <li><a href="https://github.com/raisiqueira">Github</a> - </li>
               <li>
-                <a href="https://linkedin.com/in/raisiqueira">LinkedIn</a>
+                <a href="https://twitter.com/rai_siqueira" target="_blank">
+                  Twitter
+                </a>
                 {' '}
                 -
                 {' '}
               </li>
               <li>
-                <a href="https://instagram.com/rai_siqueira">Instagram</a>
+                <a href="https://github.com/raisiqueira" target="_blank">
+                  Github
+                </a>
+                {' '}
+                -
+                {' '}
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/raisiqueira" target="_blank">
+                  LinkedIn
+                </a>
+                {' '}
+                -
+                {' '}
+              </li>
+              <li>
+                <a href="https://instagram.com/rai_siqueira" target="_blank">
+                  Instagram
+                </a>
               </li>
             </ul>
           </footer>
