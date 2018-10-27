@@ -21,7 +21,7 @@
   "author": "Raí Siqueira",
   "license": "MIT",
   "dependencies": {
-    "next": "^6.0.3",
+    "next": "^7.0.2",
     "nprogress": "^0.2.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
