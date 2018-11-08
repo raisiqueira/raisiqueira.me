@@ -2,6 +2,7 @@ import { Component } from "react";
 import Typing from "react-typing-animation";
 import Page from "../layouts/pages";
 import Avatar from "../components/Avatar";
+import Nav from "../components/Nav";
 
 const imgUri = "https://avatars0.githubusercontent.com/u/2914170?s=460&v=4";
 // Init of the layout
@@ -18,31 +19,7 @@ class Home extends Component {
             <h2>front-end engineer and beer lover.</h2>
           </Typing>
           <footer>
-            <ul>
-              <li>
-                <a href="https://twitter.com/rai_siqueira" target="_blank">
-                  Twitter
-                </a>{" "}
-                -{" "}
-              </li>
-              <li>
-                <a href="https://github.com/raisiqueira" target="_blank">
-                  Github
-                </a>{" "}
-                -{" "}
-              </li>
-              <li>
-                <a href="https://linkedin.com/in/raisiqueira" target="_blank">
-                  LinkedIn
-                </a>{" "}
-                -{" "}
-              </li>
-              <li>
-                <a href="https://instagram.com/rai_siqueira" target="_blank">
-                  Instagram
-                </a>
-              </li>
-            </ul>
+            <Nav />
           </footer>
           <style jsx>
             {`
