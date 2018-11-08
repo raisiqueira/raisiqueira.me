@@ -1,4 +1,5 @@
 import React from "react";
+import { mobile } from "../utils/settings";
 
 const Nav = () => (
   <nav>
@@ -59,6 +60,13 @@ const Nav = () => (
       a:hover:before {
         visibility: visible;
         transform: scaleX(1);
+      }
+
+      @media ${mobile} {
+        a {
+          margin: 5px;
+          letter-spacing: 1px;
+        }
       }
     `}</style>
   </nav>
