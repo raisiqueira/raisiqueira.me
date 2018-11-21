@@ -31,15 +31,15 @@ class Home extends Component {
                 {theme === "light" ? (
                   <img
                     src={MoonLight}
-                    width={24}
-                    height={24}
+                    width={25}
+                    height={25}
                     onClick={setTheme}
                   />
                 ) : (
                   <img
                     src={MoonDark}
-                    width={24}
-                    height={24}
+                    width={25}
+                    height={25}
                     onClick={setTheme}
                   />
                 )}
