@@ -24,6 +24,11 @@ const Nav = () => (
           Instagram
         </a>
       </li>
+      <li>
+        <a href="https://gist.github.com/54317e0c18d990266a0b3079f84dfd45" target="_blank">
+          My GPG Key
+        </a>
+      </li>
     </ul>
     <style jsx>{`
       li {
