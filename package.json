@@ -24,7 +24,7 @@
     "next": "^9.0.6",
     "next-images": "^1.2.0",
     "nprogress": "^0.2.0",
-    "react": "^16.9.0",
+    "react": "^16.10.1",
     "react-dom": "^16.9.0",
     "react-typing-animation": "^1.6.2"
   }
