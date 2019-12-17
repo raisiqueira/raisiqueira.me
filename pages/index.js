@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { Component } from "react";
 import Typing from "react-typing-animation";
 import { MainContext } from "../components/Context/MainContext";
@@ -14,6 +15,10 @@ const imgUri = "https://avatars0.githubusercontent.com/u/2914170?s=460&v=4";
 class Home extends Component {
   render() {
     return (
+      <>
+        <Head>
+          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        </Head>
       <MainContext.Consumer>
         {stateData => {
           const { theme } = stateData.state;
@@ -113,6 +118,7 @@ class Home extends Component {
           );
         }}
       </MainContext.Consumer>
+      </>
     );
   }
 }
