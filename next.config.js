@@ -35,5 +35,5 @@ module.exports = withImage({
       ...defaultPathMap,
       ...getPathsForPosts(),
     };
-  }
+  },
 });

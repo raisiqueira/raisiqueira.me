@@ -9,7 +9,6 @@ export default class Post extends React.Component {
     }
 
     render() {
-        console.log(this.props);
         if (!this.props.blogpost.default) {
             return (
                 <Page>
@@ -19,8 +18,8 @@ export default class Post extends React.Component {
         }
         const {
             html,
-            attributes: { thumbnail, title },
-        } = this.props.blogpost.default;
+            attributes: { title },
+        } = this.props.blogpost;
         return (
             <>
             <Page>
