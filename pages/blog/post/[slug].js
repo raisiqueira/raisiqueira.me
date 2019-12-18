@@ -1,5 +1,6 @@
 import React from 'react';
 import Page from '../../../layouts/pages';
+
 export default class Post extends React.Component {
     static async getInitialProps({ query }) {
         const { slug } = query;
@@ -9,7 +10,7 @@ export default class Post extends React.Component {
     }
 
     render() {
-        if (!this.props.blogpost.default) {
+        if (!this.props.blogpost) {
             return (
                 <Page>
                     <div>not found</div>
