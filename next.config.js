@@ -1,4 +1,25 @@
 const withImage = require('next-images');
+const fs = require('fs');
+const blogPostsFolder = './content/blog';
+
+const getPathsForPosts = () => {
+  return fs
+    .readdirSync(blogPostsFolder)
+    .map(blogName => {
+      const trimmedName = blogName.substring(0, blogName.length - 3);
+      return {
+        [`/blog/post/${trimmedName}`]: {
+          page: '/blog/post/[slug]',
+          query: {
+            slug: trimmedName,
+          },
+        },
+      };
+    })
+    .reduce((acc, curr) => {
+      return { ...acc, ...curr };
+    }, {});
+}
 
 module.exports = withImage({
   webpack: cfg => {
@@ -9,5 +30,10 @@ module.exports = withImage({
     });
     return cfg;
   },
-  prerenderPages: false,
+  async exportPathMap(defaultPathMap) {
+    return {
+      ...defaultPathMap,
+      ...getPathsForPosts(),
+    };
+  }
 });
