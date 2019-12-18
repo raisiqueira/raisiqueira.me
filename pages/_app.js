@@ -1,5 +1,5 @@
-import App, { Container } from "next/app";
-import { Provider } from "../components/Context/Provider";
+import App, { Container } from 'next/app';
+import { Provider } from '../components/Context/Provider';
 
 class MainApp extends App {
   render() {
