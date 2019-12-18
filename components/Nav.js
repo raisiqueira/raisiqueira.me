@@ -1,9 +1,17 @@
-import React from "react";
-import { mobile } from "../utils/settings";
+import React from 'react';
+import Link from 'next/link';
+import { mobile } from '../utils/settings';
 
 const Nav = () => (
   <nav>
     <ul>
+      <li>
+        <Link href={'blog'}>
+          <a>
+            Posts 📝
+          </a>
+        </Link>
+      </li>
       <li>
         <a href="https://twitter.com/rai_siqueira" target="_blank">
           Twitter
@@ -25,30 +33,43 @@ const Nav = () => (
         </a>
       </li>
       <li>
-        <a href="https://gist.github.com/54317e0c18d990266a0b3079f84dfd45" target="_blank">
+        <a
+          href="https://gist.github.com/54317e0c18d990266a0b3079f84dfd45"
+          target="_blank"
+        >
           My GPG Key
         </a>
       </li>
     </ul>
     <style jsx>{`
+      @media (prefers-color-scheme: dark) {
+        a {
+          color: var(--text-white);
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        a {
+          color: var(--text-dark);
+        }
+      }
       li {
         display: inline-block;
       }
       a {
         display: inline-block;
-        color: var(--secondary-text-color);
         margin: 15px;
         padding-bottom: 4px;
         letter-spacing: 2px;
         position: relative;
-        opacity: 0.5;
+        opacity: 0.8;
         transition: all 0.25s ease;
       }
       a:first-child {
         margin-left: 0;
       }
       a:before {
-        content: "";
+        content: '';
         position: absolute;
         width: 100%;
         height: 1px;
