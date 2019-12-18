@@ -3,15 +3,14 @@ import Page from '../../../layouts/pages';
 export default class Post extends React.Component {
     static async getInitialProps({ query }) {
         const { slug } = query;
-        const blogPost =
-        await import(`../../../content/blog/${slug}.md`)
-        .catch(error => null);
-
-        return blogPost;
+        const blogpost = await import(`../../../content/blog/${slug}.md`).catch(error => null);
+    
+        return { blogpost };
     }
 
     render() {
-        if (!this.props.default) {
+        console.log(this.props);
+        if (!this.props.blogpost.default) {
             return (
                 <Page>
                     <div>not found</div>
@@ -21,7 +20,7 @@ export default class Post extends React.Component {
         const {
             html,
             attributes: { thumbnail, title },
-        } = this.props.default;
+        } = this.props.blogpost.default;
         return (
             <>
             <Page>
@@ -31,7 +30,11 @@ export default class Post extends React.Component {
                 </article>
                 <style jsx>{`
                     article {
-                        margin: 0 auto;
+                        display: flex;
+                        justify-content: center;
+                        align-itens: center;
+                        min-height: 100vh;
+                        padding: 100px;
                     }
                     h1 {
                         text-align: center;
