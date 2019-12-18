@@ -8,5 +8,6 @@ module.exports = withImage({
       options: { mode: ['react-component'] }
     });
     return cfg;
-  }
+  },
+  prerenderPages: false,
 });
