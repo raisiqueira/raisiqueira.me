@@ -31,7 +31,7 @@ export default class Blog extends React.Component {
                         Blog 📝
                     </h2>
                     {postsList.map(post => (
-                        <Link href={`blog/post/${post.slug}`}>
+                        <Link key={post.slug} href={`blog/post/${post.slug}`}>
                             <div className="blog-post">
                                 <h3>{post.attributes.title}</h3>
                             </div>
