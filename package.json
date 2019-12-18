@@ -7,7 +7,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "lint": "eslint --fix . && echo 'Lint complete.'"
   },
   "keywords": [
     "Raí Siqueira",
@@ -29,6 +30,14 @@
     "react-typing-animation": "^1.6.2"
   },
   "devDependencies": {
-    "frontmatter-markdown-loader": "^3.1.0"
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "frontmatter-markdown-loader": "^3.1.0",
+    "prettier": "^1.19.1"
   }
 }
