@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { mobile } from '../utils/settings';
+import { sm } from '../utils/settings';
 
 const Nav = () => (
   <nav>
@@ -88,7 +88,7 @@ const Nav = () => (
         transform: scaleX(1);
       }
 
-      @media ${mobile} {
+      @media ${sm} {
         a {
           margin: 5px;
           letter-spacing: 1px;
