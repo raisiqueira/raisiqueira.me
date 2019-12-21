@@ -1,10 +1,12 @@
 import React from 'react';
 import Page from '../../../layouts/pages';
+import { formatPostDate } from '../../../utils/settings'
 
 export default class Post extends React.Component {
     static async getInitialProps({ query }) {
         const { slug } = query;
-        const blogpost = await import(`../../../content/blog/${slug}.md`).catch(error => null);
+        const blogpost = await import(`../../../content/blog/${slug}.md`)
+        .catch(error => null);
     
         return { blogpost };
     }
@@ -19,27 +21,39 @@ export default class Post extends React.Component {
         }
         const {
             html,
-            attributes: { title },
+            attributes: { title, date },
         } = this.props.blogpost;
         return (
             <>
             <Page>
-                <article>
-                    <h1>{title}</h1>
+            <main className='blog-content'>
+            <article className="blog-post">
+                    <header>
+                        <h1>{title}</h1>
+                        <p>{formatPostDate(date)}</p>
+                    </header>
                     <div dangerouslySetInnerHTML={{ __html: html }} />
                 </article>
-                <style jsx>{`
-                    article {
-                        display: flex;
-                        justify-content: center;
-                        align-itens: center;
-                        min-height: 100vh;
-                        padding: 100px;
+            </main>
+            <style jsx>
+                {
+                    `
+                    article h1 {
+                        margin-bottom: 1.75rem;
+                        font-size: 2.5rem;
+                        line-height: 1.1;
+                        text-rendering: optimizeLegibility;
                     }
-                    h1 {
-                        text-align: center;
+                    article p {
+                        font-size: 0.83255rem;
+                        line-height: 1.75rem;
+                        display: block;
+                        margin-bottom: 1.75rem;
+                        margin-top: -1.4rem;
                     }
-        `}</style>
+                    `
+                }
+            </style>
             </Page>
             </>
         )

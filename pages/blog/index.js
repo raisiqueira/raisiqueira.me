@@ -26,37 +26,21 @@ export default class Blog extends React.Component {
         return (
             <>
                 <Page>
-                    <div className='blog-content'>
+                    <main className='blog-content'>
                     <h2 style={{textAlign: 'center', marginBottom: 10}}>
                         Blog 📝
                     </h2>
                     {postsList.map(post => (
                         <Link key={post.slug} href={`blog/post/${post.slug}`}>
-                            <div className="blog-post">
+                            <article className="blog-post">
+                            <header>
                                 <h3>{post.attributes.title}</h3>
-                            </div>
+                                <p>{post.attributes.date}</p>
+                            </header>
+                            </article>
                         </Link>
                     ))}
-                        <style jsx>
-                            {`
-                                .blog-content {
-                                    display: flex;
-                                    flex-flow: column;
-                                    justify-content: center;
-                                    align-itens: center;
-                                    min-height: 100vh;
-                                    padding: 100px;
-                                }
-                                .blog-post {
-                                    width: 100%;
-                                    height: 10vh;
-                                    padding: 10px;
-                                    margin: 10px 0;
-                                    border: 1px dashed var(--grey-1);
-                                }
-                            `}
-                        </style>
-                    </div>
+                    </main>
                 </Page>
             </>
         )
