@@ -1,39 +1,41 @@
 const withImage = require('next-images');
-const fs = require('fs');
-const blogPostsFolder = './content/blog';
-
-const getPathsForPosts = () => {
-  return fs
-    .readdirSync(blogPostsFolder)
-    .map(blogName => {
-      const trimmedName = blogName.substring(0, blogName.length - 3);
-      return {
-        [`/blog/post/${trimmedName}`]: {
-          page: '/blog/post/[slug]',
-          query: {
-            slug: trimmedName,
-          },
-        },
-      };
-    })
-    .reduce((acc, curr) => {
-      return { ...acc, ...curr };
-    }, {});
-}
+const glob = require("glob")
 
 module.exports = withImage({
-  webpack: cfg => {
-    cfg.module.rules.push({
+  webpack: config => {
+    config.module.rules.push({
       test: /\.md$/,
-      loader: 'frontmatter-markdown-loader',
-      options: { mode: ['react-component'] }
-    });
-    return cfg;
+      use: "frontmatter-markdown-loader"
+    })
+    return config
   },
-  async exportPathMap(defaultPathMap) {
+  exportPathMap: async function(defaultPathMap) {
+    // get all .md files in the posts dir
+    const blogPostFiles = glob.sync("content/blog/**/*.md")
+
+    // remove path and extension to leave filename only
+    const blogPostSlugs = blogPostFiles.map(file =>
+      file
+        .split("/")[2]
+        .replace(/ /g, "-")
+        .slice(0, -3)
+        .trim()
+    )
+
+    const createPathObject = (pathObject, slug) => {
+      return {
+        ...pathObject,
+        [`/blog/post/${slug}`]: {
+          page: "/blog/post/[slug]",
+          query: { slug: slug }
+        }
+      }
+    }
+    const blogPostsPathMap = blogPostSlugs.reduce(createPathObject, {})
+
     return {
       ...defaultPathMap,
-      ...getPathsForPosts(),
-    };
-  },
-});
+      ...blogPostsPathMap
+    }
+  }
+})
