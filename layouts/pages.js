@@ -31,6 +31,7 @@ export default ({ children }) => (
         --white: #fff;
         --color-light: #fff;
         --color-dark: #000;
+        --primary-color: #2d8fd5;
         --grey-1: #ababab;
         --text-white: var(--white);
         --text-dark: var(--dark);
@@ -38,6 +39,7 @@ export default ({ children }) => (
         --bg-color-dark: var(--color-dark);
         --main-text-color-light: var(--text-white);
         --main-text-color-dark: var(--color-dark);
+        --article-title-color: var(--primary-color);
 
         --secondary-text-color: var(--grey-1);
         --avatar-border: none;
@@ -91,6 +93,23 @@ export default ({ children }) => (
       }
       li {
         list-style: none;
+      }
+      .blog-content {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 42rem;
+        padding: 2.625rem 1.3125rem;
+      }
+      .blog-post {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+      }
+      article.blog-post h3 {
+        font-size: 1.75rem;
+        color: var(--article-title-color);
+        font-weight: 700;
+        cursor: pointer;
       }
     `}
   </style>
