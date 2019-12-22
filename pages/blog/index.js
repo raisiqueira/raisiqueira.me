@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Page from '../../layouts/pages';
+import { formatPostDate } from '../../utils/settings'
 
 const importBlogPosts = async () => {
     const markdownFiles = require
@@ -35,7 +36,7 @@ export default class Blog extends React.Component {
                             <article className="blog-post">
                             <header>
                                 <h3>{post.attributes.title}</h3>
-                                <p>{post.attributes.date}</p>
+                                <p>{formatPostDate(post.attributes.date)}</p>
                             </header>
                             </article>
                         </Link>
