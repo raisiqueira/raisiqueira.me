@@ -2,7 +2,7 @@ import Head from 'next/head';
 import pkg from '../package';
 
 export default ({ children }) => (
-  <main style={{ minHeight: '100vh' }}>
+  <>
   <Head>
     <title>
       {pkg.author} — {pkg.description}
@@ -15,7 +15,9 @@ export default ({ children }) => (
     <meta name="description" content={pkg.description} />
     <meta name="keywords" content={pkg.keywords.join(', ')} />
   </Head>
-  {children}
+  <div className="page" style={{ minHeight: '100vh' }}>
+    {children}
+  </div>
   <style jsx global>
     {`
       * {
@@ -48,15 +50,16 @@ export default ({ children }) => (
         body {
           color: var(--text-white);
         }
-        main {
+        .page {
           background-color: var(--bg-color-dark);
         }
-        main h1 {
+        .page h1 {
           color: var(--main-text-color-light);
         }
 
         p {
           color: var(--main-text-color-light);
+          text-rendering: optimizeLegibility;
         }
       }
 
@@ -64,11 +67,11 @@ export default ({ children }) => (
         body {
           color: var(--text-dark);
         }
-        main {
+        .page {
           background-color: var(--bg-color-light);
         }
 
-        main h1 {
+        .page h1 {
           color: var(--main-text-color-dark);
         }
         p {
@@ -111,7 +114,49 @@ export default ({ children }) => (
         font-weight: 700;
         cursor: pointer;
       }
+      .content p {
+        line-height: 2;
+        font-size: 1rem;
+      }
+      .content pre {
+        line-height: 2;
+        margin-bottom: 35px;
+      }
+      .content p code {
+        color: var(--primary);
+      }
+      .content p code:after,
+      .content p code:before {
+        content: '\`';
+      }
+      .content img,
+      .content .gist,
+      .content pre {
+        max-width: 120%;
+        height: auto;
+        margin-left: -10%;
+        margin-right: -10%;
+      }
+      .content pre {
+        padding: 15px;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        color: #fff;
+        border: 1px solid #0d3a58;
+        background-color: #193549;
+        border-radius: 4px;
+      }
+      .content blockquote {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        padding-left: 15%;
+        color: var(--gray-1);
+        font-size: 24px;
+      }
+      .see-all a {
+        color: var(--primary-color);
+      }
     `}
   </style>
-</main>
+  </>
 );

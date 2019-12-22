@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Page from '../../layouts/pages';
+import BlogHeader from '../../components/BlogHeader';
 
 const importBlogPosts = async () => {
     const markdownFiles = require
@@ -27,15 +28,23 @@ export default class Blog extends React.Component {
             <>
                 <Page>
                     <main className='blog-content'>
-                    <h2 style={{textAlign: 'center', marginBottom: 10}}>
-                        Blog 📝
-                    </h2>
+                    <BlogHeader />
                     {postsList.map(post => (
-                        <Link key={post.slug} href={`blog/post/${post.slug}`}>
+                        <Link
+                            key={post.slug}
+                            href={`blog/post/${post.slug}`}
+                            passHref prefetch
+                        >
                             <article className="blog-post">
                             <header>
                                 <h3>{post.attributes.title}</h3>
-                                <p>{post.attributes.date}</p>
+                                <p>{new Date(
+                                    post.attributes.date
+                                    ).toLocaleDateString('en', {
+                                        month: 'long',
+                                        day: 'numeric',
+                                        year: 'numeric',
+                                    })}</p>
                             </header>
                             </article>
                         </Link>
