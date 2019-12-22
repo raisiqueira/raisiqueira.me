@@ -1,11 +1,16 @@
 const withImage = require('next-images');
-const glob = require("glob")
+const glob = require("glob");
+const markdownIt = require('markdown-it');
+const markdownItPrism = require('markdown-it-prism');
 
 module.exports = withImage({
   webpack: config => {
     config.module.rules.push({
       test: /\.md$/,
-      use: "frontmatter-markdown-loader"
+      loader: "frontmatter-markdown-loader",
+      options: {
+        markdownIt: markdownIt({ html: true }).use(markdownItPrism),
+      }
     })
     return config
   },
