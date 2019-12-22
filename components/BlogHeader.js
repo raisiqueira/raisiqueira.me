@@ -1,7 +1,9 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function BlogHeader(props) {
     return (
+        <>
         <header style={{
             display: 'flex',
             justifyContent: 'space-between',
@@ -13,8 +15,21 @@ export default function BlogHeader(props) {
                 lineHeight: '2.62rem',
             }}>raisiqueira.dev</h1>
             <div>
-                Go to home
+            <Link
+                href={`/`}
+                passHref prefetch
+            >
+            <h4>Go to home</h4>
+            </Link>
             </div>
         </header>
+        <style jsx>
+            {`
+                header h4 {
+                    cursor: pointer;
+                }
+            `}
+        </style>
+    </>
     )
 }
