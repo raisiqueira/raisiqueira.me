@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import pkg from '../package';
 
-export default ({ children }) => (
+export default ({ children }, props) => (
   <>
   <Head>
-    <title>
-      {pkg.author} — {pkg.description}
-    </title>
+    {
+      props.title ? <title>{props.title}</title> : <title>{pkg.author} — {pkg.description}</title>
+    }
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1"
@@ -26,7 +26,29 @@ export default ({ children }) => (
         -webkit-font-smoothing: antialiased;
         box-sizing: border-box;
         font-family: -apple-system, system-ui, BlinkMacSystemFont,
-          'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+          'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+      }
+      code {
+        color: #fff;
+        border: 1px solid #0d3a58;
+        background-color: #193549;
+        border-radius: 4px;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.7;
+        color: var(--main-text-color-dark);
+      }
+      h3 {
+        font-size: 1.75rem;
+        font-weight: 700;
+      }
+      ul {
+        list-style-type: circle;
       }
       :root {
         --dark: #000;
@@ -50,6 +72,15 @@ export default ({ children }) => (
         body {
           color: var(--text-white);
         }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          line-height: 1.7;
+          color: var(--main-text-color-light);
+        }
         .page {
           background-color: var(--bg-color-dark);
         }
@@ -66,6 +97,15 @@ export default ({ children }) => (
       @media (prefers-color-scheme: light) {
         body {
           color: var(--text-dark);
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          line-height: 1.7;
+          color: var(--main-text-color-dark);
         }
         .page {
           background-color: var(--bg-color-light);
@@ -96,6 +136,11 @@ export default ({ children }) => (
       }
       li {
         list-style: none;
+        padding: 10px;
+      }
+      li:before {
+        content: '-';
+        margin-right: 5px;
       }
       .blog-content {
         margin-left: auto;
@@ -108,39 +153,41 @@ export default ({ children }) => (
         padding: 10px;
         margin: 10px 0;
       }
-      article.blog-post h3 {
-        font-size: 1.75rem;
-        color: var(--article-title-color);
+      .content h2 {
+        font-size: 1.8rem;
         font-weight: 700;
-        cursor: pointer;
+        line-height: 1.7;
       }
       .content p {
         line-height: 2;
         font-size: 1rem;
+      }
+      .content p a {
+        color: var(--primary-color);
+        font-weight: bold;
+        text-decoration: underline;
       }
       .content pre {
         line-height: 2;
         margin-bottom: 35px;
       }
       .content p code {
-        color: var(--primary);
-      }
-      .content p code:after,
-      .content p code:before {
-        content: '\`';
+        padding: .1em;
       }
       .content img,
       .content .gist,
       .content pre {
-        max-width: 120%;
+        max-width: 100%;
         height: auto;
-        margin-left: -10%;
-        margin-right: -10%;
+        margin: 10px 0;
       }
       .content pre {
         padding: 15px;
         overflow: auto;
         -webkit-overflow-scrolling: touch;
+      }
+      .content pre,
+      .content p code {
         color: #fff;
         border: 1px solid #0d3a58;
         background-color: #193549;

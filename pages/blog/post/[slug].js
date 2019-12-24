@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Head from 'next/head';
 import Page from '../../../layouts/pages';
 import BlogHeader from '../../../components/BlogHeader';
 
@@ -24,9 +25,10 @@ export default class Post extends React.Component {
             html,
             attributes: { title, date },
         } = this.props.blogpost;
+        const postTitle = `${title} | Raí Siqueira`;
         return (
             <>
-            <Page>
+            <Page title={postTitle}>
             <main className='blog-content'>
             <article className="blog-post">
                 <BlogHeader />
@@ -68,6 +70,7 @@ export default class Post extends React.Component {
                     article footer {
                         border-top: 1px solid var(--primary-color);
                         padding: 15px 0;
+                        margin-top: 30px;
                     }
                     `
                 }
