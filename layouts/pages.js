@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import pkg from '../package';
 
-export default ({ children }) => (
+export default ({ children }, props) => (
   <>
   <Head>
-    <title>
-      {pkg.author} — {pkg.description}
-    </title>
+    {
+      props.title ? <title>{props.title}</title> : <title>{pkg.author} — {pkg.description}</title>
+    }
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1"
