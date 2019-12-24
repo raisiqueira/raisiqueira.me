@@ -68,6 +68,7 @@ export default class Post extends React.Component {
                     article footer {
                         border-top: 1px solid var(--primary-color);
                         padding: 15px 0;
+                        margin-top: 30px;
                     }
                     `
                 }
