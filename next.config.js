@@ -1,9 +1,11 @@
 const withImage = require('next-images');
+const withPlugins = require('next-compose-plugins');
+const withCSS = require('@zeit/next-css');
 const glob = require("glob");
 const markdownIt = require('markdown-it');
 const markdownItPrism = require('markdown-it-prism');
 
-module.exports = withImage({
+module.exports = withPlugins([withCSS, withImage], {
   webpack: config => {
     config.module.rules.push({
       test: /\.md$/,
