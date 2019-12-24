@@ -24,12 +24,17 @@ export default class Blog extends React.Component {
 
     render() {
         const { postsList } = this.props;
+        const postFiltered = postsList.sort((a, b) => {
+                const firstDate = new Date(a.attributes.date).getTime();
+                const secondDate = new Date(b.attributes.date).getTime();
+                return firstDate < secondDate ? 1 : -1;
+            });
         return (
             <>
                 <Page>
                     <main className='blog-content'>
                     <BlogHeader />
-                    {postsList.map(post => (
+                    {postFiltered.map(post => (
                         <Link
                             key={post.slug}
                             href={`blog/post/${post.slug}`}
@@ -37,7 +42,12 @@ export default class Blog extends React.Component {
                         >
                             <article className="blog-post">
                             <header>
-                                <h3>{post.attributes.title}</h3>
+                                <h3 style={{
+                                    color: 'var(--primary-color)',
+                                    cursor: 'pointer',
+                                    }}>
+                                    {post.attributes.title}
+                                </h3>
                                 <p>{new Date(
                                     post.attributes.date
                                     ).toLocaleDateString('en', {

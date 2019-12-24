@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import pkg from '../package';
-import 'reset-css';
 
 export default ({ children }) => (
   <>
@@ -47,6 +46,9 @@ export default ({ children }) => (
       h3 {
         font-size: 1.75rem;
         font-weight: 700;
+      }
+      ul {
+        list-style-type: circle;
       }
       :root {
         --dark: #000;
@@ -134,6 +136,11 @@ export default ({ children }) => (
       }
       li {
         list-style: none;
+        padding: 10px;
+      }
+      li:before {
+        content: '-';
+        margin-right: 5px;
       }
       .blog-content {
         margin-left: auto;
