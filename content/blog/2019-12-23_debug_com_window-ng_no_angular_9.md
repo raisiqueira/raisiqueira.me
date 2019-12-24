@@ -17,11 +17,11 @@ Para fazer nosso teste vamos precisar na última `RC` do Angular (9.0.0-rc.7 at�
 
 ## Conhecendo a nova API do `window.ng`
 
-Ok, com nosso projeto rodando vamos conhecer como que a api do `window.ng` funciona com alguns exemplos, o primeiro e o mais importante é o `ng.getComponent()`. 
+Ok, com nosso projeto rodando vamos conhecer como que a api do `window.ng` funciona com alguns exemplos, o primeiro e o mais importante é o `ng.getComponent()`.
 
 ![Angular componente](/img/angular-component-01.png "Angular componente")
 
-Com o nosso componente criado, vamos atualizar o valor do atributo \`title\` do nosso componente, para isso precisamos acessar o \`HTMLElement \` do componente, para isso vamos usar a função do Chrome \`$(selector)\` e armazenar em uma variável, \`el\`. A função \`ng.getComponent()\` recebe um elemento, neste caso vamos usar o elemento que está armazenado na variável \`el\`, com isso já conseguimos atualizar o valor do atributo \_title\_ do nosso componente.
+Com o nosso componente criado, vamos atualizar o valor do atributo `title` do nosso componente, para isso precisamos acessar o `HTMLElement ` do componente, para isso vamos usar a função do Chrome `$(selector)` e armazenar em uma variável, `el`. A função `ng.getComponent()` recebe um elemento, neste caso vamos usar o elemento que está armazenado na variável `el`, com isso já conseguimos atualizar o valor do atributo _title_ do nosso componente.
 
 ```js
 const el = $('app-root');
