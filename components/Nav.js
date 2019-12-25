@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { sm } from '../utils/settings';
+import { xs, sm } from '../utils/settings';
 
 const Nav = () => (
   <nav>
@@ -56,6 +56,10 @@ const Nav = () => (
       li {
         display: inline-block;
       }
+      li:before {
+        content: none !important;
+        margin-right: 5px;
+      }
       a {
         display: inline-block;
         margin: 15px;
@@ -88,10 +92,24 @@ const Nav = () => (
         transform: scaleX(1);
       }
 
+      @media ${xs} {
+        a {
+          margin: 5px;
+          letter-spacing: 1px;
+        }
+        ul {
+          display: flex;
+          overflow-x: scroll;
+        }
+      }
       @media ${sm} {
         a {
           margin: 5px;
           letter-spacing: 1px;
+        }
+        ul {
+          display: flex;
+          overflow-x: scroll;
         }
       }
     `}</style>

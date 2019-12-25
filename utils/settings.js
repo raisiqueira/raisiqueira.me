@@ -1,5 +1,6 @@
-export const xs = `screen and (min-width: 576px)`;
+export const xs = `screen and (max-width: 576px)`;
 export const sm = `screen and (min-width: 576px)`;
+export const md = `screen and (min-width: 768px)`;
 export const lg = `screen and (min-width: 992px)`;
 export const xl = `screen and (min-width: 1200px)`;
 
