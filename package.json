@@ -23,7 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
-    "next": "^9.2.0",
+    "next": "^9.2.1",
     "next-compose-plugins": "^2.2.0",
     "next-images": "^1.2.0",
     "nprogress": "^0.2.0",
