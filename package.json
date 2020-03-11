@@ -2,7 +2,7 @@
   "private": true,
   "dependencies": {
     "@mdx-js/mdx": "^1.5.7",
-    "@mdx-js/react": "^1.5.1",
+    "@mdx-js/react": "^1.5.7",
     "@reach/router": "^1.2.1",
     "@xstyled/styled-components": "^1.15.0",
     "babel-plugin-styled-components": "^1.10.7",
