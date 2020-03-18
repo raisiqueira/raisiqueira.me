@@ -40,7 +40,7 @@
     "react-icons": "^3.9.0",
     "react-markdown": "^4.3.1",
     "react-scroll": "^1.7.16",
-    "react-share": "^4.0.1",
+    "react-share": "^4.1.0",
     "reakit": "^1.0.0-beta.16",
     "styled-components": "^4.4.1"
   },
