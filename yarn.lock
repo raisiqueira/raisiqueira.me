@@ -5978,10 +5978,10 @@ gatsby-remark-copy-linked-files@^2.1.40:
     probe-image-size "^4.1.1"
     unist-util-visit "^1.4.1"
 
-gatsby-remark-embedder@^1.12.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-embedder/-/gatsby-remark-embedder-1.12.0.tgz#a06d24b8322a578ea967f42ee320288edd1b227e"
-  integrity sha512-NJzyLvXGmpCF1qRJGec5dBhCtwre3C23jPqOomtwQSx9kGiBXSGOXY1kRyLCSio4NnKUy1WEXyb7vZTRIwql1w==
+gatsby-remark-embedder@^1.16.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-embedder/-/gatsby-remark-embedder-1.16.0.tgz#0fa7524a30660b4c31b7264ecf5263f5f520a01e"
+  integrity sha512-bKIKXrnDsqLyeNRnJcaDbWwqcZSXYnkZjQJ6yOsH6UiFXFA8r8FuAgzuQgsKNZSV9ZaqL6oN2eBN2iJawy8vkg==
   dependencies:
     "@babel/runtime" "^7.7.6"
     fetch-retry "^3.0.1"
