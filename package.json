@@ -26,7 +26,7 @@
     "gatsby-remark-embedder": "^1.16.0",
     "gatsby-remark-images": "^3.2.1",
     "gatsby-source-filesystem": "^2.2.2",
-    "gatsby-transformer-sharp": "^2.4.2",
+    "gatsby-transformer-sharp": "^2.4.3",
     "human-number": "^1.0.5",
     "jsonp": "^0.2.1",
     "polished": "^3.4.4",
