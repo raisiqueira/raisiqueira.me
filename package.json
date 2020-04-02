@@ -7,7 +7,7 @@
     "@xstyled/styled-components": "^1.17.0",
     "babel-plugin-styled-components": "^1.10.7",
     "email-validator": "^2.0.4",
-    "final-form": "^4.18.7",
+    "final-form": "^4.19.1",
     "gatsby": "^2.20.8",
     "gatsby-image": "^2.3.1",
     "gatsby-plugin-google-analytics": "^2.2.2",
