@@ -339,6 +339,17 @@ function Projects({ data, projects }) {
       description={projects.jstNgValidators.description}
       tags={['Angular', 'Reactive Forms', 'Validators']}
     />,
+    <ProjectTemplate
+    logo={logos.useviacep}
+    label={projects.useViaCep.label}
+    title="Use ViaCep"
+    npm="@rsiqueira/use-viacep"
+    github="https://github.com/raisiqueira/use-viacep"
+    url="https://github.com/raisiqueira/use-viacep"
+    color="#076e95"
+    description={projects.useViaCep.description}
+    tags={['React', 'React Hooks', 'Brazilian CEPs']}
+  />,
   ]
   return (
     <Box mt={5} row mb={{ xs: -4, md: -5 }}>

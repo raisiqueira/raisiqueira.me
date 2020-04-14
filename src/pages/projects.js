@@ -19,6 +19,14 @@ export default function ProjectsPage() {
             </>
           ),
         },
+        useViaCep: {
+          label: 'React hook to fetch Brazilian CEP\'s using ViaCEP api.',
+          description: (
+            <>
+              React hook to fetch Brazilian CEP's using ViaCEP api. {' '}
+            </>
+          ),
+        },
       }}
     />
   )
