@@ -1,0 +1,120 @@
+---
+slug: '2020-05-17-what-is-tree-shaking'
+title: 'Vocabulário do dev: O que é tree shaking 🌲'
+date: '2020-05-17'
+author: 'Raí Siqueira'
+published: true
+description: 'O que é tree shaking e porque é tão importante saber o significado deste termo.'
+categories:
+  - 'javascript'
+  - 'typescript'
+  - 'webpack'
+banner: './images/utsman-media-lWAzWOLod5g-unsplash.jpg'
+bannerCredit: 'Utsman Media @ Unsplash'
+---
+
+Estamos acostumados a usar módulos no JavaScript (também conhecidos como
+[esm](https://nodejs.org/api/esm.html)) desde que o _ES6_ (ou _ES2015_) os módulos
+_ECMAScript_ são o formato padrão oficial para empacotar o código JavaScript para
+reutilização. Em aplicações com vários módulos é constante termos funções, métodos,
+variáveis e tantos outros trechos de código sem uso em nossas aplicações.
+
+O termo _tree shaking_ no mundo do JavaScript refere-se a remoção de “código morto”
+em nossa aplicação, o nome se popularizou com o _Rollup_ — um empacotador de módulos
+_ES2015_. O tree shaking é uma técnica que analisa estaticamente o código que é
+importado de algum módulo e durante o bundle remove trechos não usados.
+Esse passo é bastante importante quando vamos preparar um build para produção,
+gerando arquivos menores.
+
+Ferramentas como **Webpack** ou o próprio **Rollup** citado acima detectam esses
+códigos que não estão sendo usados na aplicação e removem do pacote gerado no final.
+
+## Bacana, mas o que é considerado de fato um código morto?
+
+Essa resposta é simples, vamos usar o **Webpack** como _module bundler_ em nosso exemplo,
+é o código que o Webpack não vê você usando, ele vai seguir a trilha de imports e
+exports ao longo de nossa aplicação, caso ele encontre algum módulo importado que
+não esteja sendo usado no módulo que o importou o Webpack vai considerar como “código morto”.
+
+Vamos de exemplo:
+
+```typescript
+// module-01.ts
+export function sum(a: number, b: number): number {
+  return a + b
+}
+
+export function minus(a: number, b: number): number {
+  return a - b
+}
+
+// main-module.ts
+import { sum, minus } from './module-01'
+
+const main = () => {
+  console.log(sum(2 + 2))
+}
+
+main()
+```
+
+No Exemplo acima a função _minus_ não foi executada no código, apenas importada,
+isso quer dizer que, no nosso bundle final, o mesmo acontece com propriedades de
+objetos que não são usadas, como no exemplo abaixo:
+
+```typescript
+// person.ts
+export const person = {
+  name: 'Rai Siqueira',
+  birthday: '2 december',
+}
+
+// main.ts
+import { person } from './person'
+
+console.log(person.name)
+```
+
+No exemplo acima, a propriedade _birthday_ não é acessada, logo será removida de
+nosso _bunble_ final.
+
+O tree shaking só funciona com as sintaxes _import_ e _export_, portanto não
+funciona com a sintaxe que usamos em módulos do tipo _commonJS_ (usando a sintaxe `require`).
+Os exemplos acima também se aplicam a dependências que baixamos do NPM, um exemplo
+prático disso é no uso do _Lodash_.
+
+```typescript
+import map from 'lodash/map'
+```
+
+O trecho de código acima irá adicionar apenas o `map` do Lodash em nosso build,
+e não o Lodash por completo. Utilizar a técnica de tree shaking e a eliminação
+do código morto pode reduzir significativamente o tamanho do código que temos em
+nossa aplicação. Quanto menos código não utilizado, maior será o desempenho de nossa aplicação.
+
+Outra técnica que podemos utilizar é usando o site **BundlePhobia**, que trás vários
+detalhes de um pacote publicado no NPM, como por exemplo o assunto deste artigo — o
+tree shaking.
+
+Exemplo de pacote com suporte a tree shaking (note o ícone da árvore abaixo do nome do pacote):
+
+![Bundlephobia with tree shaking](./images/bundlephobia01.png)
+
+Exemplo de pacote sem suporte a tree shaking (sem o ícone da árvore abaixo do nome do pacote):
+
+![Bundlephobia without tree shaking](./images/bundlephobia02.png)
+
+Podemos melhorar a identificação de código morto usando ferramentas de lint ,
+por exemplo ESLint ou TSLint, vou indicar o plugin **ESLint Plugin unused imports**
+[eslint-plugin-unused-imports - npm](https://www.npmjs.com/package/eslint-plugin-unused-imports)
+que vai te ajudar a identificar os imports desnecessários quando você estiver rodando.
+
+Bom, espero ter ajudado você a desmistificar esse termo que ouvimos bastante quando estamos usando módulos no JavaScript.
+
+_Referências:_
+
+- https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking
+- https://webpack.js.org/guides/tree-shaking/
+- https://nodejs.org/api/esm.html#esm_introduction
+- https://rollupjs.org/guide/en/
+- https://bundlephobia.com
