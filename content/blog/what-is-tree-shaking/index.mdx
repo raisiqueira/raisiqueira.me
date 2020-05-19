@@ -4,7 +4,7 @@ title: 'Dev vocabulary: What is tree shaking 🌲'
 date: '2020-05-17'
 author: 'Raí Siqueira'
 published: true
-description: 'What is tree shaking and why is so important know this term.'
+description: 'What's tree shaking and why is so important to know this term.'
 categories:
   - 'javascript'
   - 'typescript'
@@ -15,13 +15,13 @@ bannerCredit: 'Utsman Media @ Unsplash'
 
 We are used to using modules in JavaScript (aka [esm](https://nodejs.org/api/esm.html))
 since _ES6_ (or _ES2015_) ECMAScript modules are the official standard format for
-packing JavaScript code for reuse. In applications with multiple modules its constant
+packing JavaScript code for reuse. In applications with multiple modules it's constant
 to have functions, methods, variables and many others pieces of code not used in our apps.
 
 The _tree shaking_ term in the JavaScript world refers to dead-code elimination
 from our application, the name became popular with _Rollup_ — an _ES2015_ module
 bundler. Tree shaking is a technique that statically analyzes the code that is imported
-from some module and during the bundle removes unused codes. This is step is very
+from some module and during the bundle removes unused codes. This step is very
 important when we are going to prepare a production build, generating smaller files.
 
 Tools like **Webpack** or the **Rollup** mentioned above detect these codes that
@@ -35,7 +35,7 @@ follow the trail of imports and exports throughout our app, if it finds any impo
 module that does not being used in the module that imported it, the Webpack will
 consider it as “dead code”.
 
-Let’s example 😬
+Let’s see an example 😬
 
 ```typescript
 // module-01.ts
@@ -58,7 +58,7 @@ main()
 ```
 
 In the example above, the function _minus_ was not executed in the code, just imported,
-this means that it does not in our final bundle, the same happens with properties
+which means that, this will not be in our final bundle, the same happens with properties
 of objects that are not used, see the example below:
 
 ```typescript
