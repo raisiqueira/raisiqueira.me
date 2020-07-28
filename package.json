@@ -24,7 +24,7 @@
     "gatsby-plugin-styled-components": "^3.2.1",
     "gatsby-remark-copy-linked-files": "^2.2.1",
     "gatsby-remark-embedder": "^2.0.0",
-    "gatsby-remark-images": "^3.2.6",
+    "gatsby-remark-images": "^3.3.22",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-sharp": "^2.4.7",
     "human-number": "^1.0.5",
