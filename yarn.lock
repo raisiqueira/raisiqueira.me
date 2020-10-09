@@ -938,10 +938,10 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.2.0", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.4", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
-  version "7.9.2"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.2.tgz#d90df0583a3a252f09aaa619665367bae518db06"
-  integrity sha512-NE2DtOdufG7R5vnfQUTehdTfNycfUANEtCa9PssN9O/xmTzP4E08UI797ixaei6hBEVL9BI/PsdJS5x7mWoB9Q==
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.2.0", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.4", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+  version "7.11.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
+  integrity sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -6326,12 +6326,12 @@ gatsby-plugin-sitemap@^2.3.1:
     pify "^3.0.0"
     sitemap "^1.13.0"
 
-gatsby-plugin-styled-components@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-3.2.1.tgz#de37983e1c72376f8800b8535f2edb033fd9449f"
-  integrity sha512-JYvKkO/PRWhoha9QeN0f4IUqINUNCWyAuzB+UzxOG2Ef0pD5omi8sFgtSBawiZjOwFMFvxp7vCiEf7N4K3BP7Q==
+gatsby-plugin-styled-components@^3.3.14:
+  version "3.3.14"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-3.3.14.tgz#0e71ffb681351d28f127d5ff01f4c509c92e1daa"
+  integrity sha512-Eh1RN8jRfKqvW56dU47LTJxGFOEkpnoTpvtnkaPviwwJCt5nNcHlsLZ/9syLYO/5gtRefbyEHvCCqq18q2FCBw==
   dependencies:
-    "@babel/runtime" "^7.8.7"
+    "@babel/runtime" "^7.11.2"
 
 gatsby-react-router-scroll@^2.2.3:
   version "2.2.3"
