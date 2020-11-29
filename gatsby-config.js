@@ -93,6 +93,7 @@ module.exports = {
         theme_color: `#FFCC68`,
         display: `standalone`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        lang: `en`,
         localize: [
           {
             start_url: `/pt/`,
