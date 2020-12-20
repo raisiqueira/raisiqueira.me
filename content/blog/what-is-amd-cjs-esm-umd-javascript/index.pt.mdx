@@ -4,7 +4,7 @@ title: 'Vocabulário do dev: O que é AMD, CMJ, ESM e UMD no JavaScript 📦'
 date: '2020-11-29'
 author: 'Raí Siqueira'
 published: true
-description: 'O que são essas siglas e o que o dev JavaScript precisa entender sobre.'
+description: 'O que são estas siglas e o que o dev JavaScript precisa entender sobre.'
 categories:
   - 'javascript'
   - 'modules'
@@ -14,14 +14,17 @@ bannerCredit: 'Toby Stodart @ Unsplash'
 ---
 
 Já pensou em escrever um código JavaScript nos dias de hoje sem usar as sintaxes
-_import/export_? Seria estranho, certo? Estamos acostumados a usar módulos no JavaScript
-e em algum momento nos deparamos com as seguintes siglas: **AMD**, **CMJ**, **ESM**
+_import/export_? Seria estranho, certo? Estamos acostumados a usar módulos no JavaScript,
+mas em alguns momentos nos deparamos com as seguintes siglas: **AMD**, **CMJ**, **ESM**
 ou **UMD**.
+
+![Exemplo na documentação do React](./images/example-react-docs.png)
+
 Sem mais delongas vamos ao que interessa, o que cada sigla dessas significa.
 
 ## Asynchronous Module Definition — AMD
 
-AMD é uma sigla para Asynchronous Module Definition, e é um padrão que foi proposto
+Começando com o **AMD**, que é uma sigla para Asynchronous Module Definition, e é um padrão que foi proposto
 para ser usado para aplicações frontend (enquanto o CJS — citado no próximo tópico,
 é usado para códigos NodeJS). Segue um exemplo de código AMD:
 
@@ -36,6 +39,8 @@ define(['dependecy01', ' dependency02'], function (dependecy01, dependecy02) {
 - Módulos AMD são importados de forma assíncrona;
 - A sintaxe do AMD é menos intuitiva do que as demais (por exemplo o CJS);
 - implementado pelo RequireJS;
+
+**Mais informações sobre AMD**: _[Why AMD?](https://requirejs.org/docs/whyamd.html)_
 
 ## CommonJS — CJS
 
@@ -141,3 +146,9 @@ client quando no server side.
 Era isso, um bom resumo do que são essas siglas que vemos quando estamos trabalhando
 com JavaScript ou em bibliotecas JS. Em breve mais um artigo da série Vocabulário do dev.
 Até a próxima 🤙.
+
+## Referências:
+
+- https://requirejs.org/docs/whyamd.html
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+- https://nodejs.org/docs/latest/api/modules.html
