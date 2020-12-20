@@ -22,8 +22,8 @@ const theme = {
     'container-lg': 1200,
   },
   shadows: {
-    glow: p => `${th.color('shadow')(p)} 0 0 0 ${th.space(1)(p)}`,
-    soft: p => `0 ${th.px(2)(p)} ${th.px(6)(p)} 0 rgba(0, 0, 0, 0.1)`,
+    glow: (p) => `${th.color('shadow')(p)} 0 0 0 ${th.space(1)(p)}`,
+    soft: (p) => `0 ${th.px(2)(p)} ${th.px(6)(p)} 0 rgba(0, 0, 0, 0.1)`,
   },
   colors: {
     black: '#000',
@@ -50,11 +50,12 @@ const theme = {
     light800: '#006fba',
     light900: '#00426e',
     light950: '#00436e',
-    'navbar-bg': p => transparentize(0.1, th.color('light900')(p)),
-    shadow: p => transparentize(0.75, th.color('accent')(p)),
-    'shadow-dark': p => transparentize(0.75, th.color('darker')(p)),
+    'navbar-bg': (p) => transparentize(0.1, th.color('light900')(p)),
+    shadow: (p) => transparentize(0.75, th.color('accent')(p)),
+    'shadow-dark': (p) => transparentize(0.75, th.color('darker')(p)),
     darker: th.color('black'),
     accent: '#FFCC68',
+    codeBlock: '#333', // workaround to dark mode
 
     modes: {
       light: {
@@ -70,6 +71,7 @@ const theme = {
         light100: '#363B65',
         darker: th.color('white'),
         accent: '#b54909',
+        codeBlock: th.color('light800'),
       },
       'monochrome-light': {
         lighter: th.color('black'),

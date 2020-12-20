@@ -9,7 +9,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer'
 import getPrismTheme from './prismTheme'
 
 const Editor = styled.div`
-  background-color: light800;
+  background-color: codeBlock;
   color: light100;
   padding: 3 4;
   margin: 5 -4;
